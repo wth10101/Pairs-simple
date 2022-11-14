@@ -9,25 +9,26 @@ const fruits = ["apple1","orange1","bannana1","kiwi1","apple2","orange2","bannan
 let arr=[0,1,2,3,4,5,6,7]
 arr.sort(() => Math.random() - 0.5);
 for (let i = 0; i<8; i++){
-	const button = document.createElement('button')
-	button.id = fruits[arr[i]]
-	button.classList.add("card")
-	button.value = fruits[arr[i]].substring(0,fruits[arr[i]].length-1)
-	button.innerHTML = '<img src="img\\blank.jpg" height=75 />'
-	button.addEventListener('click', () => handleClick(button.value, button.id))
-	gameGrid.appendChild(button)
+	const card = document.createElement('img')
+	card.id = fruits[arr[i]]
+	card.classList.add("card")
+	card.value = fruits[arr[i]].substring(0,fruits[arr[i]].length-1)
+	card.src = "img\\blank.jpg"
+	card.addEventListener('click', () => handleClick(card.value, card.id))
+	gameGrid.appendChild(card)
 }
 
 function handleClick(value, id){
+	console.log(value + " " + id)
 	el = document.getElementById(id)
-	if (el.innerHTML.includes("blank")){
-		el.innerHTML = '<img src="img\\'+ el.value + '.jpg" height=75 />'
+	if (el.src.includes("blank")){
+		el.src = 'img\\'+ el.value + '.jpg'
 		numCardsTurned++
 		if (numCardsTurned == 1){
 			firstCardTurned = el
 		}
 	}else{
-		el.innerHTML = '<img src="img\\blank.jpg" height=75 />'
+		el.src = 'img\\blank.jpg'
 		numCardsTurned--
 	}
 	if (numCardsTurned == 2){
@@ -37,25 +38,19 @@ function handleClick(value, id){
 			score++
 		}else{
 			setTimeout(() => { //pause to let the card turn before alert
-  			el.innerHTML = '<img src="img\\blank.jpg" height=75 />'
-				firstCardTurned.innerHTML = '<img src="img\\blank.jpg" height=75 />'
-			}, 500)
-			
+  			el.src = "img\\blank.jpg"
+				firstCardTurned.src = "img\\blank.jpg"
+			}, 500)		
 		}
 		numCardsTurned = 0
 		if (score == 4){
 			clearInterval(timerVar)
 			setTimeout(() => { //pause to let the card turn before alert
   			alert(document.getElementById("timer").innerHTML)
-				
-			}, 100)
-			
-			
-			
+			}, 100)	
 		}
 	}
 }
-
 
 var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = 0;
