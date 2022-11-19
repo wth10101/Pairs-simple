@@ -7,23 +7,28 @@ html, body {
 
 .container { 
 	background-color: #9bc8f3cc ;
-	width : 440px;
-	display : flex;
-	flex-wrap: wrap;
+	width : 425px;
+	margin:0 auto;
 }
 
-.contianer h1,h2,h3{
-	text-align : center
+.contianer h1,h2{
+	text-align : center;
+	background-color : #0090ff;
+}
+
+.container h3{
+	text-align:center
 }
 
 #reset-btn{
-	text-align: center;
+	text-align : center;
 }
 
 .card{ 
 	width : 100px;
+	height : 100px;
 	background-color : white;
-	margin : 3px			 
+	margin : 3px;
 }
 
 #timer{
@@ -39,10 +44,11 @@ html, body {
   background-color: #088a8c; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-	margin:5px
+  padding : 15px 32px;
+  text-align : center;
+  display : inline-block;
+  font-size : 16px;
+	margin-bottom: 10px;
+	margin-left: 40%;
+	border-radius : 10px;
 }
