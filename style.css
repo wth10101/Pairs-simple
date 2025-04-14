@@ -1,6 +1,6 @@
 html, body {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 	font-family: sans-serif;
 	color: white;
 }
@@ -8,7 +8,7 @@ html, body {
 .container { 
 	background-color: #9bc8f3cc ;
 	width : 425px;
-	margin:0 auto;
+	margin: auto;
 	padding : 10px;
 	border-radius : 10px; 
 }
@@ -42,14 +42,12 @@ html, body {
 
 
 #reset-btn {
-  background-color: #088a8c; /* Green */
-  border: none;
-  color: white;
-  padding : 16px 32px;
-  text-align : center;
-  display : inline-block;
-  font-size : 16px;
-  margin-top : 20px;
+    background-color: #088a8c; /* Green */
+    color: white;
+    padding : 16px 32px;
+    text-align : center;
+    display : inline-block;   
+    margin-top : 20px;
 	margin-bottom: 10px;
 	margin-left: 40%;
 	border-radius : 10px;
