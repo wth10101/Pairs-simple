@@ -177,3 +177,6 @@ start = "vscode-css-language-server --stdio"
 
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix", ".config"]
+
+[deployment]
+deploymentTarget = "cloudrun"

@@ -22,7 +22,7 @@ function loadCards(){
 function handleClick(value, id){
 	//console.log(value + " " + id)
 	el = document.getElementById(id)
-	if (el.src.includes("blank")){ //turn card to image
+	if (el.src.includes("blank")){ // turn card to image
 		el.src = 'img\\'+ el.value + '.jpg'
 		numCardsTurned++
 		if (numCardsTurned == 1){
