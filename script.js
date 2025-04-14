@@ -20,23 +20,24 @@ function loadCards(){
 }
 
 function handleClick(value, id){
-	console.log(value + " " + id)
+	//console.log(value + " " + id)
 	el = document.getElementById(id)
-	if (el.src.includes("blank")){
+	if (el.src.includes("blank")){ //turn card to image
 		el.src = 'img\\'+ el.value + '.jpg'
 		numCardsTurned++
 		if (numCardsTurned == 1){
 			firstCardTurned = el
 		}
-	}else{
+	}else{ //turn card to blank
 		el.src = 'img\\blank.jpg'
 		el.style.height = '100px';
 		numCardsTurned--
 	}
-	if (numCardsTurned == 2){
+	
+	if (numCardsTurned == 2){ // check for match
 		if (firstCardTurned.value == value){
-			firstCardTurned.removeEventListener("click", handleClick)
-			el.removeEventListener("click", handleClick)
+			firstCardTurned.removeEventListener("click", () =>handleClick(firstCardTurned.value, firstCardTurned.id))
+			el.removeEventListener("click", () => handleClick(el.value, el.id))
 			score++
 		}else{
 			setTimeout(() => { //pause to let the card turn before alert
