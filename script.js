@@ -49,7 +49,8 @@ function handleClick(value, id){
 		if (score == 4){
 			clearInterval(timerVar)
 			setTimeout(() => { //pause so card turns before alert
-  			alert(document.getElementById("timer").innerHTML)
+  			alert(document.getElementById("timer").innerHTML);
+			resetGame();
 			}, 100)	
 		}
 	}
@@ -71,13 +72,17 @@ function countTimer() {
 
 var el = document.getElementById("reset-btn");
 el.addEventListener('click', () => {
+	resetGame();
+})
+
+function resetGame(){
 	const elements = document.getElementsByClassName("card");
-    while(elements.length > 0){
-        elements[0].parentNode.removeChild(elements[0]);
-    }
+	while(elements.length > 0){
+		elements[0].parentNode.removeChild(elements[0]);
+	}
 	score = 0
 	totalSeconds = 0;
 	clearInterval(timerVar)
 	timerVar = setInterval(countTimer, 1000);
 	loadCards()
-})
+}
