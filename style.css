@@ -52,3 +52,11 @@ html, body {
 	margin-left: 40%;
 	border-radius : 10px;
 }
+
+@media (max-width:600px){
+	#game{
+		display : grid;
+		grid-template-columns : 1fr 1fr;
+		place-items: center;
+	}
+}
